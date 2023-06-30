@@ -12,6 +12,8 @@ _Relatore_: Marzolla Moreno
 
 Per la compilazione dei codici presi in considerazione nell'ambiente Linux, è indispensabile avere installato il compilatore GCC per la compilazione del codice omp-median.c e il compilatore NVCC per la compilazione dei codici CUDA/C. Inoltre, per l'esecuzione dei codici CUDA, è necessario che il sistema sia dotato di almeno una scheda grafica NVIDIA adeguata.
 
+Le immagini di input devono necessariamente essere immagini grayscale in formato .raw con pixel di 16 bit.
+
 ### omp-median.c
 Per compilare:\
 `gcc -std=c99 -fopenmp -Wall -Wpedantic -O2 omp-median.c -o omp-median`
