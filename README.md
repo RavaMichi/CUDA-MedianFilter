@@ -41,4 +41,4 @@ Per compilare:\
 `nvcc cuda-median-multi.cu -o cuda-median-multi -Xcompiler -fopenmp`
 
 Per eseguire:\
-`./cuda-median-hist filein fileout width height radius`
+`./cuda-median-multi filein fileout width height radius`
