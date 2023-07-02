@@ -152,6 +152,7 @@ __global__ void median_filter_kernel( data_t* in, data_t* out, const int WIDTH, 
         int *val_pos = &hist[val / HIST_SIZE];
         atomicAdd(val_pos, 1);
     }
+    __syncwarp(); // synchronize threads in warp
 
     /* Search median (! only the master thread of each group !) */
     if (th_id == 0)
@@ -186,6 +187,8 @@ __global__ void median_filter_kernel( data_t* in, data_t* out, const int WIDTH, 
         if (val_base == base)
             atomicAdd(val_pos, 1);
     }
+    __syncwarp(); // synchronize threads in warp
+
     /* Search median (! only the master thread of each group !) */
     if (th_id == 0)
     {
